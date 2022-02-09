@@ -1,6 +1,6 @@
 package startup.chapter1;
 
-public class Min3 {
+public class ExQ_Min3 {
 
     public int algorithm(int a, int b, int c) {
         int min = a;

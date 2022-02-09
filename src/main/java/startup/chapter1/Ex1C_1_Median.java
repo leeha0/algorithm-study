@@ -2,7 +2,7 @@ package startup.chapter1;
 
 import java.util.Scanner;
 
-public class Median {
+public class Ex1C_1_Median {
 
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
@@ -16,6 +16,7 @@ public class Median {
         int c = stdIn.nextInt();
 
         System.out.println("중앙값은 " + med3(a, b, c) + " 입니다.");
+        System.out.println("중앙값은 " + med3V2(a, b, c) + " 입니다.");
     }
 
     private static int med3(int a, int b, int c) {
@@ -36,7 +37,8 @@ public class Median {
         }
     }
 
-    private static int med3V2 (int a, int b, int c) {
+    // med3 보다 효율이 떨어진다
+    private static int med3V2(int a, int b, int c) {
         if ((b >= a && c <= a) || (b <= a && c >= a)) {
             return a;
         } else if ((a > b && c < b) || (a < b && c > b)) {
