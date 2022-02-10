@@ -13,8 +13,12 @@ public class ExQ16_Spira {
 
         n = stdIn.nextInt();
         spira(n);
+        spira2(n);
     }
 
+    //  *
+    // ***
+    //*****
     public static void spira(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < n - i; j++) {
@@ -31,5 +35,20 @@ public class ExQ16_Spira {
             }
             System.out.println();
         }
+        System.out.println();
+    }
+
+    // i 행에는 (i - 1) * 2 + 1개의 기호를 출력하시오.
+    public static void spira2(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("-");
+            }
+            for (int j = 0; j < ((i - 1) * 2 + 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
