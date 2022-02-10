@@ -4,18 +4,18 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class ExQ_Min4Test {
+class ExQ2_Min3Test {
 
     @ParameterizedTest
-    @CsvSource({"3, 4, 2, 1"})
-    void min4Test(int a, int b, int c, int d) {
+    @CsvSource({"3, 2, 1"})
+    void max4Test(int a, int b, int c) {
         // given
-        ExQ_Min4 ex11Min4 = new ExQ_Min4();
+        ExQ2_Min3 ex11Min3 = new ExQ2_Min3();
 
         // when
-        int min = ex11Min4.algorithm(a, b, c, d);
+        int max = ex11Min3.algorithm(a, b, c);
 
         // then
-        Assertions.assertThat(min).isEqualTo(d);
+        Assertions.assertThat(max).isEqualTo(c);
     }
 }

@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ExQ10_Sub {
 
-    // 두 변수 a, b에 정수를 입력하고 b - a를 출력하시오.
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
@@ -12,6 +11,7 @@ public class ExQ10_Sub {
         int b;
         boolean isGreaterThen;
 
+        System.out.println("두 변수 a, b에 정수를 입력하고 b - a를 출력하시오.");
         System.out.print("a의 값 : ");
         a = stdIn.nextInt();
 

@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Ex1_3_JudgeSign {
 
-    // 정숫값의 부호(양수/음수/0)을 판단
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
+        System.out.println("정숫값의 부호(양수/음수/0)을 판단하시오.");
         System.out.println("정수를 입력하세요. : ");
         int n = stdIn.nextInt();
 

@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class ExQ11_PrintPos {
 
-    // 양의 정수를 입력하고 자릿수를 출력하는 프로그램을 작성하시오.
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.println("n : ");
+        System.out.println("양의 정수를 입력하고 자릿수를 출력하는 프로그램을 작성하시오.");
+        System.out.print("n : ");
         int n = stdIn.nextInt();
         int unit = 1;
         int pos = 0;

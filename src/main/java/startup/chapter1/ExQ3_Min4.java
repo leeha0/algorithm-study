@@ -1,8 +1,9 @@
 package startup.chapter1;
 
-public class ExQ_Min4 {
+public class ExQ3_Min4 {
 
     public int algorithm(int a, int b, int c, int d) {
+        System.out.println("네 값의 최솟값을 구하시오.");
         int min = a;
 
         if (b < min) {

@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 public class Ex1_6_SumForPos {
 
-    // (양수를 입력할 경우) 1부터 n까지의 합을 구하시오.
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
         int n;
 
-        System.out.println("1부터 n까지의 합을 구합니다.");
+        System.out.println("양수를 입력할 경우 1부터 n까지의 합을 구합니다.");
 
         do {
-            System.out.println("n의 값 : ");
+            System.out.print("n의 값 : ");
             n = stdIn.nextInt();
         } while (n <= 0);
 

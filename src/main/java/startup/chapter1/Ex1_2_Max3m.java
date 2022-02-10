@@ -3,6 +3,7 @@ package startup.chapter1;
 public class Ex1_2_Max3m {
 
     public static void main(String[] args) {
+        System.out.println("세 정숫값 가운데 최댓값을 구하여 출력하시오.");
         System.out.println("max3(3, 2, 1) = " + max3(3, 2, 1));
         System.out.println("max3(3, 2, 2) = " + max3(3, 2, 2));
         System.out.println("max3(3, 1, 2) = " + max3(3, 1, 2));
