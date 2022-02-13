@@ -1,7 +1,5 @@
 package startup.chapter6;
 
-import java.util.Scanner;
-
 public class ExQ2_BubbleSortWithLabel {
 
     // TODO Ex 6_1 라벨 출력
@@ -10,49 +8,54 @@ public class ExQ2_BubbleSortWithLabel {
     //  6 4 3 7 1 - 8 9
     // ...
     public static void main(String[] args) {
-        Scanner stdIn = new Scanner(System.in);
-
         System.out.println("버블 정렬(버전 1)");
-        System.out.print("요솟수 : ");
-        int nx = stdIn.nextInt();
-        int[] x = new int[nx];
-
-        for (int i = 0; i < nx; i++) {
-            System.out.print("x[" + i + "] : ");
-            x[i] = stdIn.nextInt();
-        }
+        int[] x = {6, 4, 3, 7, 1, 9, 8};
+        int nx = x.length;
 
         bubbleSort(x, nx);
-
-        System.out.println("오름차순으로 정렬했습니다.");
-        for (int i = 0; i < nx; i++) {
-            System.out.println("x[" + i + "]=" + x[i]);
-        }
     }
 
     private static void bubbleSort(int[] x, int n) {
+        int swapCount = 0;
+        int comparisonCount = 0;
         for (int i = 0; i < n - 1; i++) {
             System.out.println("패스" + (i + 1) + ":");
-            int j = n - 1;
-            for (int z = 0; z < x.length; z++) {
-                boolean exchange = false;
-                System.out.printf("%3d", x[z]);
 
-                if (j > i) {
-                    if (x[j - 1] > x[j]) {
-                        exchange = true;
-                        swap(x, j - 1, j);
-                    }
+            for (int j = n - 1; j > i; j--) {
+                boolean swap = false;
+
+                comparisonCount++;
+                if (x[j] < x[j - 1]) {
+                    swap = true;
                 }
 
-                // TODO: 스왑이 발생하기 전 출력이 되어야 함
-                if (z == j) {
-                    System.out.printf("%s", exchange ? "+" : "-");
+                print(x, j - 1, swap);
+
+                if (swap) {
+                    swapCount++;
+                    swap(x, j, j - 1);
                 }
-                j--;
             }
+
             System.out.println();
         }
+
+        System.out.println("비교를 " + comparisonCount + "회 했습니다.");
+        System.out.println("교환을 " + swapCount + "회 했습니다.");
+    }
+
+    private static void print(int[] a, int idx, boolean swap) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.printf("%3d", a[i]);
+            if (i == idx) {
+                if (swap) {
+                    System.out.print("+");
+                } else {
+                    System.out.print("-");
+                }
+            }
+        }
+        System.out.println();
     }
 
     private static void swap(int[] a, int idx1, int idx2) {
