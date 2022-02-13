@@ -18,7 +18,7 @@ public class ExQ5_BidirectionBubbleSort {
             // 패스
             int passNumber = i + 1;
             System.out.println("패스" + passNumber + ":");
-            if (isOddNumber(passNumber)) {
+//            if (isOddNumber(passNumber)) {
                 // 홀수
                 for (int j = a.length - 1 - sortedNumberOfRight; j > sortedNumberOfLeft; j--) {
                     if (a[j] < a[j - 1]) {
@@ -30,7 +30,7 @@ public class ExQ5_BidirectionBubbleSort {
                     System.out.printf("%3d", i1);
                 }
                 System.out.println();
-            } else {
+//            } else {
                 // 짝수
                 for (int j = sortedNumberOfLeft; j < a.length - 1 - sortedNumberOfRight; j++) {
                     if (a[j] > a[j + 1]) {
@@ -42,7 +42,7 @@ public class ExQ5_BidirectionBubbleSort {
                     System.out.printf("%3d", i1);
                 }
                 System.out.println();
-            }
+//            }
         }
     }
 

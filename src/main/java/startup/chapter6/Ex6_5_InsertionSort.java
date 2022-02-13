@@ -2,6 +2,7 @@ package startup.chapter6;
 
 import java.util.Scanner;
 
+// 밀어내기
 public class Ex6_5_InsertionSort {
 
     public static void main(String[] args) {

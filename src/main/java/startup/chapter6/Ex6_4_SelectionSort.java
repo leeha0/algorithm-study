@@ -2,6 +2,7 @@ package startup.chapter6;
 
 import java.util.Scanner;
 
+// 스왑
 public class Ex6_4_SelectionSort {
 
     public static void main(String[] args) {
