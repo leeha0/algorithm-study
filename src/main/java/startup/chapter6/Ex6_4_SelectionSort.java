@@ -2,12 +2,12 @@ package startup.chapter6;
 
 import java.util.Scanner;
 
-public class Ex6_1_BubbleSort {
+public class Ex6_4_SelectionSort {
 
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.println("버블 정렬(버전 1)");
+        System.out.println("선택 정렬");
         System.out.print("요솟수 : ");
         int nx = stdIn.nextInt();
         int[] x = new int[nx];
@@ -17,7 +17,7 @@ public class Ex6_1_BubbleSort {
             x[i] = stdIn.nextInt();
         }
 
-        bubbleSort(x, nx);
+        selectionSort(x, nx);
 
         System.out.println("오름차순으로 정렬했습니다.");
         for (int i = 0; i < nx; i++) {
@@ -25,17 +25,15 @@ public class Ex6_1_BubbleSort {
         }
     }
 
-    private static void bubbleSort(int[] x, int n) {
+    public static void selectionSort(int[] a, int n) {
         for (int i = 0; i < n - 1; i++) {
-            for (int j = n - 1; j > i; j--) {
-                if (x[j - 1] > x[j]) {
-                    swap(x, j - 1, j);
+            int min = i;
+            for (int j = i + 1; j < n; j++) {
+                if (a[j] < a[min]) {
+                    min = j;
                 }
-                // 내림차순
-                // if (x[j] > x[j - 1]) {
-                //     swap(x, j, j - 1);
-                // }
             }
+            swap(a, i, min);
         }
     }
 

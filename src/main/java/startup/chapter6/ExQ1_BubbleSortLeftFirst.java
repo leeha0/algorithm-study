@@ -2,7 +2,7 @@ package startup.chapter6;
 
 import java.util.Scanner;
 
-public class Ex6_1_BubbleSort {
+public class ExQ1_BubbleSortLeftFirst {
 
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class Ex6_1_BubbleSort {
 
         bubbleSort(x, nx);
 
-        System.out.println("오름차순으로 정렬했습니다.");
+        System.out.println("왼쪽부터 오름차순으로 정렬했습니다.");
         for (int i = 0; i < nx; i++) {
             System.out.println("x[" + i + "]=" + x[i]);
         }
@@ -27,14 +27,10 @@ public class Ex6_1_BubbleSort {
 
     private static void bubbleSort(int[] x, int n) {
         for (int i = 0; i < n - 1; i++) {
-            for (int j = n - 1; j > i; j--) {
-                if (x[j - 1] > x[j]) {
-                    swap(x, j - 1, j);
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (x[j] > x[j + 1]) {
+                    swap(x, j, j + 1);
                 }
-                // 내림차순
-                // if (x[j] > x[j - 1]) {
-                //     swap(x, j, j - 1);
-                // }
             }
         }
     }

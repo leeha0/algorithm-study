@@ -2,8 +2,13 @@ package startup.chapter6;
 
 import java.util.Scanner;
 
-public class Ex6_1_BubbleSort {
+public class ExQ2_BubbleSortWithLabel {
 
+    // TODO Ex 6_1 라벨 출력
+    // 패스1:
+    //  6 4 3 7 1 9 + 8
+    //  6 4 3 7 1 - 8 9
+    // ...
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
@@ -27,15 +32,26 @@ public class Ex6_1_BubbleSort {
 
     private static void bubbleSort(int[] x, int n) {
         for (int i = 0; i < n - 1; i++) {
-            for (int j = n - 1; j > i; j--) {
-                if (x[j - 1] > x[j]) {
-                    swap(x, j - 1, j);
+            System.out.println("패스" + (i + 1) + ":");
+            int j = n - 1;
+            for (int z = 0; z < x.length; z++) {
+                boolean exchange = false;
+                System.out.printf("%3d", x[z]);
+
+                if (j > i) {
+                    if (x[j - 1] > x[j]) {
+                        exchange = true;
+                        swap(x, j - 1, j);
+                    }
                 }
-                // 내림차순
-                // if (x[j] > x[j - 1]) {
-                //     swap(x, j, j - 1);
-                // }
+
+                // TODO: 스왑이 발생하기 전 출력이 되어야 함
+                if (z == j) {
+                    System.out.printf("%s", exchange ? "+" : "-");
+                }
+                j--;
             }
+            System.out.println();
         }
     }
 
