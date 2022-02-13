@@ -2,7 +2,6 @@ package startup.chapter6;
 
 public class ExQ2_BubbleSortWithLabel {
 
-    // TODO Ex 6_1 라벨 출력
     // 패스1:
     //  6 4 3 7 1 9 + 8
     //  6 4 3 7 1 - 8 9
@@ -10,9 +9,8 @@ public class ExQ2_BubbleSortWithLabel {
     public static void main(String[] args) {
         System.out.println("버블 정렬(버전 1)");
         int[] x = {6, 4, 3, 7, 1, 9, 8};
-        int nx = x.length;
 
-        bubbleSort(x, nx);
+        bubbleSort(x, x.length);
     }
 
     private static void bubbleSort(int[] x, int n) {
