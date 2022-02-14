@@ -16,12 +16,14 @@ public class ExQ5_BidirectionBubbleSort {
 
         for (int i = 0; i < a.length; i++) {
             // 패스
+            int exchangeCount = 0;
             int passNumber = i + 1;
             System.out.println("패스" + passNumber + ":");
 //            if (isOddNumber(passNumber)) {
                 // 홀수
                 for (int j = a.length - 1 - sortedNumberOfRight; j > sortedNumberOfLeft; j--) {
                     if (a[j] < a[j - 1]) {
+                        exchangeCount++;
                         swap(a, j, j - 1);
                     }
                 }
@@ -30,6 +32,12 @@ public class ExQ5_BidirectionBubbleSort {
                     System.out.printf("%3d", i1);
                 }
                 System.out.println();
+
+            if (exchangeCount == 0) {
+                break;
+            }
+            exchangeCount = 0;
+
 //            } else {
                 // 짝수
                 for (int j = sortedNumberOfLeft; j < a.length - 1 - sortedNumberOfRight; j++) {
@@ -43,6 +51,10 @@ public class ExQ5_BidirectionBubbleSort {
                 }
                 System.out.println();
 //            }
+
+            if (exchangeCount == 0) {
+                break;
+            }
         }
     }
 
