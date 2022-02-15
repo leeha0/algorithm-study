@@ -26,7 +26,7 @@ public class Ex6_5_InsertionSort {
         }
     }
 
-    private static void insertionSort(int a[], int n) {
+    private static void insertionSort(int[] a, int n) {
         for (int i = 1; i < n; i++) {
             int j;
             int temp = a[i];

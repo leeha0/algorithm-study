@@ -3,7 +3,7 @@ package startup.chapter6;
 public class Study1_BubbleSort {
 
     public static void main(String[] args) {
-        int a[] = {8, 3, 4, 1, 7, 6, 5, 2};
+        int[] a = {8, 3, 4, 1, 7, 6, 5, 2};
 
         for (int i = a.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {

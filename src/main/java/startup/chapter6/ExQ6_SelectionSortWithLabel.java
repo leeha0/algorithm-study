@@ -9,7 +9,7 @@ public class ExQ6_SelectionSortWithLabel {
     public static void main(String[] args) {
         System.out.println("선택 정렬의 교환 과정을 출력하시오.");
         System.out.println("정렬하지 않은 부분 첫 번째 요소에 기호 *, 정렬하지 않은 부분 가장 작은 요소에 기호 +");
-        int a[] = {6, 4, 8, 3, 1, 9, 7};
+        int[] a = {6, 4, 8, 3, 1, 9, 7};
 
         for (int i = 0; i < a.length - 1; i++) {
             // i 는 정렬하지 않은 부분의 첫 번째 요소

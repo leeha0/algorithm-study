@@ -10,7 +10,7 @@ public class ExQ5_BidirectionBubbleSort {
 
         System.out.println("양방향 버블 정렬을 구현하시오.");
         System.out.println("홀수 번재의 패스틑 가장 작은 요소를 맨 앞으로 옮기고 짝수 번째 패스는 가장 큰 요소를 뒤로 옮긴다.");
-        int a[] = {9, 1, 3, 4, 6, 7, 8};
+        int[] a = {9, 1, 3, 4, 6, 7, 8};
         int sortedNumberOfLeft = 0;
         int sortedNumberOfRight = 0;
 
@@ -58,7 +58,7 @@ public class ExQ5_BidirectionBubbleSort {
         }
     }
 
-    public static void swap(int a[], int idx1, int idx2) {
+    public static void swap(int[] a, int idx1, int idx2) {
         int temp = a[idx1];
         a[idx1] = a[idx2];
         a[idx2] = temp;
