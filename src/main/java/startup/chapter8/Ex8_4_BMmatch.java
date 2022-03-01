@@ -3,10 +3,10 @@ package startup.chapter8;
 public class Ex8_4_BMmatch {
 
     public static void main(String[] args) {
-        String txt = "ABABCDEFGHA";
+        String txt = "ABCXDEZCABACABAC";
         System.out.println("텍스트 : " + txt);
 
-        String pat = "ABC";
+        String pat = "ABAC";
         System.out.println("패턴 : " + pat);
 
         int idx = bmMatch(txt, pat);
@@ -52,7 +52,9 @@ public class Ex8_4_BMmatch {
                 pp--;
                 pt--;
             }
-            pt += (skip[txt.charAt(pt)] > patLen - pp) ? skip[txt.charAt(pt)] : patLen - pp;
+            pt += Math.max(skip[txt.charAt(pt)], patLen - pp);
+//          pt += (skip[txt.charAt(pt)] > patLen - pp) ? skip[txt.charAt(pt)] : patLen - pp;
+//          pt += skip[txt.charAt(pt)];
         }
 
         return -1;
