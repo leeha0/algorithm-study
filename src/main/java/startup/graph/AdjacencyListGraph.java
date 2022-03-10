@@ -2,10 +2,10 @@ package startup.graph;
 
 import java.util.ArrayList;
 
-// 인접 리스트(배열, 리스트)를 사용하여 그래프를 표현하는 방법
+// 인접 리스트를 사용하여 그래프를 표현하는 방법
 class ListGraph {
 
-    private ArrayList<ArrayList<Integer>> listGraph;
+    private final ArrayList<ArrayList<Integer>> listGraph;
 
     public ListGraph(int size) {
         listGraph = new ArrayList<>();
