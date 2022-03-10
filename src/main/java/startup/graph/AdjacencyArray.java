@@ -27,6 +27,24 @@ class ArrayGraph {
     }
 }
 
+class WeightedArrayGraph {
+
+    final private int[][] arrayGraph;
+
+    public WeightedArrayGraph(int size) {
+        arrayGraph = new int[size][size];
+    }
+
+    public void put(int v1, int v2, int w) {
+        arrayGraph[v1][v2] = arrayGraph[v2][v1] = w;
+    }
+
+    public void putSingle(int v1, int v2, int w) {
+        arrayGraph[v1][v2] = w;
+    }
+
+}
+
 public class AdjacencyArray {
 
     public static void main(String[] args) {
