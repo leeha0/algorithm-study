@@ -1,6 +1,7 @@
 package startup.graph;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 // 인접 리스트를 이용한 방향 그래프
 class DirectedGraph {
@@ -48,6 +49,30 @@ class DirectedGraph {
         }
     }
 
+    public void DFSWithStack() {
+        Stack<Integer>stack = new Stack<>();
+        boolean[] visited = new boolean[vertexSize];
+
+        for (int i = 0; i < vertexSize; ++i) {
+            if (!visited[i]) {
+                stack.push(i);
+                visited[i] = true;
+
+                while (!stack.isEmpty()) {
+                    Integer vertex = stack.pop();
+                    System.out.println(vertex);
+
+                    for (Integer adjVertex : adj[vertex]) {
+                        if (!visited[adjVertex]) {
+                            stack.push(adjVertex);
+                            visited[adjVertex] = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 public class DirectedGraphClient {
@@ -66,6 +91,9 @@ public class DirectedGraphClient {
 
         System.out.println("출발 정점 = 없음");
         graph.DFS();
+
+        System.out.println("스택을 통한 탐색");
+        graph.DFSWithStack();
     }
 
 }
