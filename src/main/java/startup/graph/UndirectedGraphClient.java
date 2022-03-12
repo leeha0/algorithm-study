@@ -37,11 +37,12 @@ class Vertex {
 
 }
 
-class ListGraphSearch {
+// 인접 리스트를 이용한 무방향 그래프
+class UndirectedGraph {
 
     private final List<Vertex> vertices;
 
-    public ListGraphSearch(int size) {
+    public UndirectedGraph(int size) {
         vertices = new ArrayList<>(size);
 
         for (int i = 0; i < size; i++) {
@@ -107,20 +108,20 @@ class ListGraphSearch {
     }
 }
 
-public class GraphSearch {
+public class UndirectedGraphClient {
 
     public static void main(String[] args) {
-        ListGraphSearch listGraphSearch = new ListGraphSearch(5);
-        listGraphSearch.addAdjacentNode(0, 1);
-        listGraphSearch.addAdjacentNode(1, 2);
-        listGraphSearch.addAdjacentNode(2, 3);
-        listGraphSearch.addAdjacentNode(3, 4);
+        UndirectedGraph graph = new UndirectedGraph(5);
+        graph.addAdjacentNode(0, 1);
+        graph.addAdjacentNode(1, 2);
+        graph.addAdjacentNode(2, 3);
+        graph.addAdjacentNode(3, 4);
 
-        listGraphSearch.print();
+        graph.print();
         // DFS : 0 -> 1 -> 2 -> 3 -> 4 -> END
-        // listGraphSearch.dfs(listGraphSearch.getVertex(0));
+        // graph.dfs(graph.getVertex(0));
         // RDFS : 0 -> 1 -> 2 -> 3 -> 4 -> END
-        listGraphSearch.recursiveDfs(listGraphSearch.getVertex(0));
+        graph.recursiveDfs(graph.getVertex(0));
     }
 
 }
