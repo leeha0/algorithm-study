@@ -1,6 +1,7 @@
 package startup.graph;
 
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 // 인접 리스트를 이용한 방향 그래프
@@ -50,7 +51,7 @@ class DirectedGraph {
     }
 
     public void DFSWithStack() {
-        Stack<Integer>stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         boolean[] visited = new boolean[vertexSize];
 
         for (int i = 0; i < vertexSize; ++i) {
@@ -73,6 +74,25 @@ class DirectedGraph {
         }
     }
 
+    public void BFSWithQueue(int vertex) {
+        Queue<Integer> queue = new LinkedList<>();
+        boolean[] visited = new boolean[vertexSize];
+
+        queue.add(vertex);
+        visited[vertex] = true;
+
+        while (!queue.isEmpty()) {
+            vertex = queue.poll();
+            System.out.println(vertex);
+
+            for (Integer adjVertex : adj[vertex]) {
+                if (!visited[adjVertex]) {
+                    queue.add(adjVertex);
+                    visited[adjVertex] = true;
+                }
+            }
+        }
+    }
 }
 
 public class DirectedGraphClient {
@@ -86,14 +106,17 @@ public class DirectedGraphClient {
         graph.addEdge(2, 3);
         graph.addEdge(3, 3);
 
-        System.out.println("출발 정점 = 2");
+        System.out.println("[DFS] 출발 정점 = 2");
         graph.DFS(2);
 
-        System.out.println("출발 정점 = 없음");
+        System.out.println("[DFS] 출발 정점 = 없음");
         graph.DFS();
 
-        System.out.println("스택을 통한 탐색");
+        System.out.println("[DFS] 출발 정점 = 없음 (스택을 통한 탐색)");
         graph.DFSWithStack();
+
+        System.out.println("[BFS] 출발 정점 = 0 (큐를 통한 탐색)");
+        graph.BFSWithQueue(0);
     }
 
 }
