@@ -45,7 +45,7 @@ class WeightedArrayGraph {
 
 }
 
-public class AdjacencyArray {
+public class AdjacencyArrayGraph {
 
     public static void main(String[] args) {
         final int size = 4;
@@ -58,4 +58,5 @@ public class AdjacencyArray {
 
         arrayGraph.printGraph();
     }
+    
 }
