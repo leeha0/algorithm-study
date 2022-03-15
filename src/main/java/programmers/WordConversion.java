@@ -8,7 +8,8 @@ import java.util.Queue;
 /**
  * https://programmers.co.kr/learn/courses/30/lessons/43163 begin에서 target으로 가장 짧은 변환 과정
  * <p>
- * - 한 번에 한 개의 알파벳만 바꿀 수 있다. - words에 있는 단어로반 변환할 수 있다.
+ * - 한 번에 한 개의 알파벳만 바꿀 수 있다.
+ * - words에 있는 단어로반 변환할 수 있다.
  * <p>
  * hit(begin) -> hot -> dot -> dog -> cog(target) = 4단계
  */
