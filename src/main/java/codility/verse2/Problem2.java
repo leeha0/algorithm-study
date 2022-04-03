@@ -3,16 +3,19 @@ package codility.verse2;
 public class Problem2 {
 
     public static void main(String[] args) {
-        int solution1 = solution(4, 3); // 1
+        int solution0 = solution2(9, 10); // 2
+        System.out.println("solution1 = " + solution0);
+
+        int solution1 = solution2(4, 3); // 1
         System.out.println("solution1 = " + solution1);
 
-        int solution2 = solution(4, 10); // 4
+        int solution2 = solution2(4, 10); // 4
         System.out.println("solution2 = " + solution2);
 
-        int solution3 = solution(1, 2); // -1
+        int solution3 = solution2(1, 2); // -1
         System.out.println("solution3 = " + solution3);
 
-        int solution4 = solution(10, 5); // 1
+        int solution4 = solution2(10, 5); // 1
         System.out.println("solution4 = " + solution4);
     }
 
@@ -38,4 +41,22 @@ public class Problem2 {
         return k > 0 ? -1 : result;
     }
 
+    // O(N)
+    public static int solution2(int N, int K) {
+        int result = 0;
+
+        // 등차수열의 합
+        if ((N * (N + 1) / 2) < K) {
+            return -1;
+        }
+
+        while (N < K) {
+            K -= N;
+            result += 1;
+            N--;
+        }
+
+        // 마지막 한 컵
+        return ++result;
+    }
 }
